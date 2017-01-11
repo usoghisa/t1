@@ -4,7 +4,7 @@ package manifests
 // Manifests give access to the Java reflection API (eg. method getMethods) without the need for
 // instantiating a value of the instrumented type
 //
-object methods extends App {
+object methods {
   def printMethods[T](t: T) {
     // requires instance
     val meths = t.getClass.getMethods
@@ -23,7 +23,9 @@ object methods extends App {
     println(meths take 5 mkString "\n")
   }
 
-  printMethods(Some(""))
-  printMethods1("scala.Some")
-  printMethods2[Some[_]]
+  def main(args: Array[String]): Unit = {
+    printMethods(Some(""))
+    printMethods1("scala.Some")
+    printMethods2[Some[_]]
+  }
 }
