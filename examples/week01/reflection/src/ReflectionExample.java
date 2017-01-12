@@ -106,7 +106,8 @@ public class ReflectionExample {
             String fieldValue = (String) privateField.get(rent);
             System.out.println("fieldValue = " + fieldValue);
 
-        } catch (NoSuchFieldException | NoSuchMethodException | IllegalArgumentException
+        } catch (
+            NoSuchFieldException | NoSuchMethodException | IllegalArgumentException
                 | IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
         }
